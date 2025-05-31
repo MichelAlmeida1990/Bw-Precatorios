@@ -1,0 +1,139 @@
+.social-icons a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: var(--accent-color) !important;
+}
+
+.contact-info, .address-info {
+    line-height: 1.5;
+}
+
+.contact-info div, .address-info div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.contact-info div:hover, .address-info div:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.contact-info i, .address-info i {
+    width: 24px;
+    text-align: center;
+    color: white;
+}
+
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem;
+}
+
+.footer-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem;
+}
+
+.footer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.footer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-card:hover::before {
+    opacity: 1;
+}
+
+.footer-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-card-content h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footer-card-content p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-card-content .more-info {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.footer-card:hover .more-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer styles */
+footer {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+footer .social-icons a {
+    color: white;
+}
+
+footer .social-icons a:hover {
+    color: var(--accent-color);
+}
+
+footer .contact-info div, footer .address-info div {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+footer .contact-info div:hover, footer .address-info div:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+footer .contact-info i, footer .address-info i {
+    color: white;
+}
