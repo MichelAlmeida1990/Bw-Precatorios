@@ -1,0 +1,99 @@
+/* Otimização de Desempenho */
+
+/* Reduzir pintura */
+.will-change {
+    will-change: transform, opacity;
+}
+
+/* Otimizar transformações */
+.transform-3d {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimizar rolagem */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Reduzir pintura em animações */
+.animate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimizar imagens */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Reduzir pintura em dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .no-animations * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Otimizar sombras */
+.box-shadow {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Otimizar bordas */
+.border-radius {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Otimizar transformações */
+.transform {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimizar transições */
+.transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Otimizar transformações em hover */
+.hover-transform {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimizar rolagem */
+.scroll-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Otimizar imagens lazy loading */
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-img.loaded {
+    opacity: 1;
+}
+
+/* Otimizar carregamento de imagens */
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Otimizar carregamento de fontes */
+@font-face {
+    font-family: 'OptimizedFont';
+    src: local('OptimizedFont');
+    font-display: swap;
+}

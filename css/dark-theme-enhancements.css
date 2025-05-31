@@ -1,0 +1,247 @@
+/* 
+ * Melhorias avançadas para o tema escuro
+ * Este arquivo contém otimizações e melhorias visuais específicas 
+ * para o tema escuro profissional
+ */
+
+/* Ajustes de contraste e legibilidade */
+.dark-mode {
+    /* Melhorar a legibilidade do texto */
+    font-weight: 350;
+    letter-spacing: 0.01em;
+}
+
+/* Efeito de vidro para cards e elementos em destaque */
+.dark-mode .glass-effect {
+    background: rgba(30, 33, 38, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .navbar.glass-effect {
+    background: rgba(18, 20, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Efeitos de hover refinados */
+.dark-mode .card:hover,
+.dark-mode .feature-card:hover,
+.dark-mode .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border-color);
+    border-color: var(--primary-color-light);
+}
+
+/* Ícones com efeito de brilho */
+.dark-mode .icon-glow i {
+    text-shadow: 0 0 10px var(--primary-color-light);
+}
+
+.dark-mode .btn-primary:hover i,
+.dark-mode a:hover i {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Melhorias para elementos específicos */
+.dark-mode .hero {
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-tertiary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(77, 132, 226, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+/* Efeito de destaque para cards ativos */
+.dark-mode .card.active,
+.dark-mode .service-card.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(77, 132, 226, 0.3);
+}
+
+/* Tooltip melhorado */
+.dark-mode [data-tooltip] {
+    position: relative;
+}
+
+.dark-mode [data-tooltip]:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-tertiary);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+}
+
+.dark-mode [data-tooltip]:hover:after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 130%;
+}
+
+/* Textos com gradiente para elementos de destaque */
+.dark-mode .gradient-text {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+/* Inputs e formulários com design moderno */
+.dark-mode .modern-input {
+    background-color: rgba(40, 44, 52, 0.5);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .modern-input:focus {
+    border-color: var(--primary-color);
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 0 0 3px rgba(77, 132, 226, 0.2);
+}
+
+/* Bordas com gradiente para destacar elementos */
+.dark-mode .gradient-border {
+    position: relative;
+    border: none !important;
+}
+
+.dark-mode .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Melhoria da acessibilidade para links */
+.dark-mode a {
+    text-decoration: none;
+    position: relative;
+}
+
+.dark-mode a:not(.btn):hover {
+    color: var(--primary-color-light);
+}
+
+.dark-mode a:not(.btn):not(.nav-link):not(.no-underline)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color-light);
+    transition: width 0.3s ease;
+}
+
+.dark-mode a:not(.btn):not(.nav-link):not(.no-underline):hover::after {
+    width: 100%;
+}
+
+/* Botões com efeito 3D */
+.dark-mode .btn-3d {
+    position: relative;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: perspective(500px) translateZ(0);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .btn-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color-dark);
+    border-radius: inherit;
+    transform: translateZ(-5px);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .btn-3d:hover {
+    transform: perspective(500px) translateZ(5px);
+}
+
+/* Animação de carregamento para elementos que carregam dados */
+@keyframes darkPulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.dark-mode .loading {
+    animation: darkPulse 1.5s ease-in-out infinite;
+}
+
+/* Adicione a classe 'dark-theme-ready' ao body para ativar todas as melhorias */
+.dark-mode.dark-theme-ready .card,
+.dark-mode.dark-theme-ready .feature-card,
+.dark-mode.dark-theme-ready .service-card,
+.dark-mode.dark-theme-ready .btn,
+.dark-mode.dark-theme-ready .form-control {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Adaptações específicas para dispositivos móveis no modo escuro */
+@media (max-width: 768px) {
+    .dark-mode .card,
+    .dark-mode .feature-card,
+    .dark-mode .service-card {
+        background-color: var(--bg-secondary);
+    }
+    
+    .dark-mode .bottom-nav {
+        background-color: rgba(18, 20, 24, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}

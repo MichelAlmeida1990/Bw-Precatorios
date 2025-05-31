@@ -1,0 +1,440 @@
+/* Temas */
+:root {
+    /* Cores Principais */
+    --primary-color: #0d6efd;
+    --primary-color-dark: #0b5ed7;
+    --primary-color-light: #66b3ff;
+    
+    /* Cores de Sucesso */
+    --success-color: #198754;
+    --success-color-dark: #157347;
+    --success-color-light: #4dd38c;
+    
+    /* Cores de Alerta */
+    --warning-color: #ffc107;
+    --warning-color-dark: #cc9a00;
+    --warning-color-light: #ffd733;
+    
+    /* Cores de Erro */
+    --danger-color: #dc3545;
+    --danger-color-dark: #c82333;
+    --danger-color-light: #ff6b81;
+    
+    /* Cores de Informação */
+    --info-color: #0dcaf0;
+    --info-color-dark: #0aa2c1;
+    --info-color-light: #66e0ff;
+    
+    /* Cores de Fundo */
+    --bg-color: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    
+    /* Cores de Texto */
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --text-light: #495057;
+    
+    /* Cores de Bordas */
+    --border-color: #dee2e6;
+    
+    /* Sombras */
+    --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Dark Mode - Versão Profissional Aprimorada */
+.dark-mode {
+
+
+
+
+    /* Cores Principais - Tonalidade azul moderna */
+    --primary-color: #4d84e2;
+    --primary-color-dark: #3a6fc7;
+    --primary-color-light: #7ba4ff;
+    
+
+
+
+
+    /* Cores de Sucesso - Ajustadas para tema escuro */
+    --success-color: #2eb670;
+    --success-color-dark: #25915a;
+    --success-color-light: #55d895;
+    
+
+
+
+
+    /* Cores de Alerta - Ajustadas para tema escuro */
+    --warning-color: #ffb017;
+    --warning-color-dark: #e09200;
+    --warning-color-light: #ffc54d;
+    
+
+
+
+
+    /* Cores de Erro - Ajustadas para tema escuro */
+    --danger-color: #e84c5c;
+    --danger-color-dark: #d32f45;
+    --danger-color-light: #ff7a87;
+    
+
+
+
+
+    /* Cores de Informação - Ajustadas para tema escuro */
+    --info-color: #3cc3e0;
+    --info-color-dark: #28a2be;
+    --info-color-light: #6cdbf5;
+    
+
+
+
+
+    /* Cores de Fundo - Tons mais sofisticados de escuro */
+    --bg-color: #121418;
+    --bg-secondary: #1e2126;
+    --bg-tertiary: #282c34;
+    
+
+
+
+
+    /* Cores de Texto - Maior legibilidade */
+    --text-color: #e6e6e6;
+    --text-muted: #a0a0a0;
+    --text-light: #c8c8c8;
+    
+
+
+    /* Cores de Bordas - Tons sofisticados */
+    --border-color: #383c44;
+    
+
+
+
+
+    /* Sombras - Ajustadas para tema escuro */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Navbar Dark Mode - Ajustes refinados */
+.dark-mode .navbar {
+
+    background-color: rgba(18, 20, 24, 0.95) !important;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+.dark-mode .navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    transition: color 0.2s ease;
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+
+    color: var(--primary-color-light) !important;
+}
+
+.dark-mode .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Botão de Toggle */
+#theme-toggle {
+
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    border-radius: 50%;
+}
+
+#theme-toggle:hover {
+
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: rotate(15deg);
+}
+
+#theme-toggle i {
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+
+/* Cards Dark Mode - Design mais elegante */
+.dark-mode .card {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.dark-mode .card-header {
+
+    background-color: var(--bg-tertiary);
+    border-bottom-color: var(--border-color);
+}
+
+
+/* Botões Dark Mode - Design mais moderno */
+.dark-mode .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões secundários */
+.dark-mode .btn-outline-secondary {
+    color: var(--text-light);
+    border-color: var(--border-color);
+}
+
+.dark-mode .btn-outline-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Formulários Dark Mode */
+.dark-mode .form-control {
+
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .form-control:focus {
+
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 0.2rem rgba(77, 132, 226, 0.25);
+}
+
+.dark-mode ::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Alertas Dark Mode */
+.dark-mode .alert {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Tabelas Dark Mode */
+.dark-mode .table {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.dark-mode .table th {
+    border-color: var(--border-color);
+    color: var(--text-color);
+    background-color: var(--bg-tertiary);
+}
+
+.dark-mode .table td {
+    border-color: var(--border-color);
+}
+
+.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+/* Footer Dark Mode */
+
+.dark-mode .footer, 
+.dark-mode footer {
+    background-color: var(--bg-tertiary);
+    border-top-color: var(--border-color);
+}
+
+
+.dark-mode .footer a, 
+.dark-mode footer a {
+    color: var(--text-color);
+}
+
+
+.dark-mode .footer a:hover, 
+.dark-mode footer a:hover {
+    color: var(--primary-color-light);
+    text-decoration: none;
+}
+
+/* Elementos específicos do site */
+.dark-mode .hero {
+    background: linear-gradient(to right, var(--bg-color), var(--bg-secondary));
+}
+
+.dark-mode .feature-card,
+.dark-mode .service-card,
+.dark-mode .step-card,
+.dark-mode .testimonial-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .feature-card:hover,
+.dark-mode .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+/* Timeline e elementos interativos */
+.dark-mode .timeline-line {
+    background-color: var(--border-color);
+}
+
+.dark-mode .timeline-item.completed .timeline-content {
+    background-color: var(--bg-tertiary);
+}
+
+.dark-mode .timeline-item .timeline-content {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .timeline-date {
+    color: var(--primary-color-light);
+}
+
+/* Accordions (FAQ) */
+.dark-mode .accordion-item {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+.dark-mode .accordion-button {
+    background-color: var(--bg-tertiary);
+    color: var(--text-color);
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+/* Calculadora */
+.dark-mode .calculator-container {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .calculator-header {
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode .calculator-input,
+.dark-mode .calculator-select {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .calculator-input:focus,
+.dark-mode .calculator-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(77, 132, 226, 0.25);
+}
+
+/* Bottom navigation */
+.dark-mode .bottom-nav {
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.dark-mode .bottom-nav-item {
+    color: var(--text-muted);
+}
+
+.dark-mode .bottom-nav-item.active {
+    color: var(--primary-color);
+}
+
+.dark-mode .bottom-nav-item:hover {
+    color: var(--primary-color-light);
+}
+
+/* Scrollbar personalizada para tema escuro */
+.dark-mode::-webkit-scrollbar {
+    width: 12px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 6px;
+    border: 3px solid var(--bg-color);
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-muted);
+}
+
+/* Transições */
+* {
+
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Modo escuro para imagens */
+.dark-mode img:not(.no-dark-filter) {
+    filter: brightness(0.9);
+}
+
+/* Tooltips em modo escuro */
+.dark-mode .tooltip .tooltip-inner {
+    background-color: var(--bg-tertiary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .tooltip .arrow::before {
+    border-top-color: var(--bg-tertiary);
+}

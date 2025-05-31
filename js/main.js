@@ -1,3 +1,36 @@
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Carregar tema salvo
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.toggle('dark-mode', savedTheme === 'dark');
+        themeToggle.querySelector('i').classList.toggle('fa-moon', savedTheme !== 'dark');
+        themeToggle.querySelector('i').classList.toggle('fa-sun', savedTheme === 'dark');
+    }
+}
+
+// Salvar tema
+function saveTheme(theme) {
+    localStorage.setItem('theme', theme);
+}
+
+// Alternar tema
+themeToggle.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-mode');
+    themeToggle.querySelector('i').classList.toggle('fa-moon', !isDark);
+    themeToggle.querySelector('i').classList.toggle('fa-sun', isDark);
+    saveTheme(isDark ? 'dark' : 'light');
+    
+    // Disparar evento de mudança de tema
+    document.dispatchEvent(new Event('themeChange'));
+});
+
+// Carregar tema ao iniciar
+loadTheme();
+
 // Scroll animations
 const observerOptions = {
     threshold: 0.1,

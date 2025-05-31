@@ -15,6 +15,11 @@
 /* Import testimonials styles */
 @import url('./testimonials.css');
 @import url('./footer.css');
+@import url('./animations.css');
+@import url('./form.css');
+@import url('./calculator.css');
+@import url('./faq.css');
+@import url('./timeline.css');
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

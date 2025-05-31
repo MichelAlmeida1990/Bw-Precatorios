@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo do Novo Tema Escuro - BW Precatórios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/dark-theme-enhancements.css">
+    <style>
+        .demo-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+        .demo-title {
+            margin-bottom: 30px;
+        }
+        .dark-mode-toggler {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 15px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" class="btn btn-primary dark-mode-toggler">
+        <i class="fas fa-moon"></i> Alternar Tema
+    </button>
+
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1>Demonstração do Novo Tema Escuro</h1>
+            <p class="lead">Experimente o tema escuro moderno e profissional clicando no botão no canto superior direito</p>
+        </header>
+
+        <section class="demo-section">
+            <h2 class="demo-title gradient-text">Cards e Elementos Principais</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect">
+                        <div class="card-body">
+                            <h3 class="card-title">Card com Efeito de Vidro</h3>
+                            <p class="card-text">Este card utiliza um efeito de vidro que fica mais evidente no tema escuro.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2 icon-glow"></i> Melhor contraste</li>
+                                <li><i class="fas fa-check text-success me-2 icon-glow"></i> Design elegante</li>
+                                <li><i class="fas fa-check text-success me-2 icon-glow"></i> Ícones com efeito de brilho</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Card Padrão</h3>
+                            <p class="card-text">Um card padrão com cores ajustadas para o tema escuro.</p>
+                            <p>Experimente passar o mouse sobre este card para ver o efeito de hover.</p>
+                            <a href="#" class="btn btn-primary">Botão Primário</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 gradient-border">
+                        <div class="card-body">
+                            <h3 class="card-title">Card com Borda Gradiente</h3>
+                            <p class="card-text">Este card tem uma borda com gradiente que fica mais destacada no tema escuro.</p>
+                            <div class="mt-3">
+                                <a href="#" class="btn btn-primary btn-3d">Botão 3D</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2 class="demo-title">Componentes Interativos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Acordeão 1 - Aberto
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>O componente de acordeão foi melhorado com cores ajustadas para o tema escuro, proporcionando melhor contraste e legibilidade.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Acordeão 2 - Fechado
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>As cores e estilos do acordeão foram aprimorados para o tema escuro.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInput" class="form-label">Campos de Formulário</label>
+                            <input type="text" class="form-control modern-input" id="exampleInput" placeholder="Digite algo aqui...">
+                            <div class="form-text">Os campos de formulário têm design moderno com transições suaves.</div>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select modern-input">
+                                <option>Selecione uma opção</option>
+                                <option>Opção 1</option>
+                                <option>Opção 2</option>
+                                <option>Opção 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck">
+                            <label class="form-check-label" for="exampleCheck">Checkbox com estilo aprimorado</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2 class="demo-title">Tabelas e Efeitos de Texto</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Melhor contraste</td>
+                                <td>As cores da tabela foram ajustadas para melhor contraste</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Hover melhorado</td>
+                                <td>Efeito de hover mais suave e agradável</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Linhas alternadas</td>
+                                <td>Padrão de linhas alternadas para melhor leitura</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h3 class="gradient-text">Texto com Gradiente</h3>
+                    <p>Este título usa um efeito de gradiente que fica especialmente bonito no tema escuro.</p>
+                    
+                    <h3 class="mt-4">Links e Interações</h3>
+                    <p>Os <a href="#">links</a> foram melhorados com efeitos de hover suaves. Experimente passar o mouse sobre este <a href="#">link de exemplo</a>.</p>
+                    
+                    <div data-tooltip="Este é um tooltip melhorado!" class="mt-4 mb-4">
+                        <button class="btn btn-primary">Passe o mouse aqui</button>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <span class="badge bg-primary me-2">Badge Primário</span>
+                        <span class="badge bg-secondary me-2">Badge Secundário</span>
+                        <span class="badge bg-success me-2">Badge Sucesso</span>
+                        <span class="badge bg-danger">Badge Perigo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2 class="demo-title">Ícones e Elementos Visuais</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 bg-secondary rounded icon-glow">
+                        <i class="fas fa-star fa-3x mb-3 text-warning"></i>
+                        <h4>Ícone com Brilho</h4>
+                        <p>Efeito de brilho nos ícones</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 bg-secondary rounded">
+                        <i class="fas fa-heart fa-3x mb-3 text-danger"></i>
+                        <h4>Ícone Padrão</h4>
+                        <p>Sem efeito adicional</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 rounded glass-effect">
+                        <i class="fas fa-magic fa-3x mb-3 text-info"></i>
+                        <h4>Efeito de Vidro</h4>
+                        <p>Com fundo translúcido</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 rounded gradient-border">
+                        <i class="fas fa-palette fa-3x mb-3 text-primary"></i>
+                        <h4>Borda Gradiente</h4>
+                        <p>Com borda colorida</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Código simples para alternar o tema
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            // Aplicar tema salvo se existir
+            if (localStorage.getItem('bw_precatorios_theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+                updateIcon(true);
+            }
+            
+            // Toggle do tema
+            themeToggle.addEventListener('click', function() {
+                const isDark = document.documentElement.classList.toggle('dark-mode');
+                localStorage.setItem('bw_precatorios_theme', isDark ? 'dark' : 'light');
+                updateIcon(isDark);
+            });
+            
+            // Atualizar ícone
+            function updateIcon(isDark) {
+                const icon = themeToggle.querySelector('i');
+                icon.className = `fas fa-${isDark ? 'sun' : 'moon'}`;
+            }
+            
+            // Adicionar classe para efeitos visuais
+            setTimeout(() => {
+                document.body.classList.add('dark-theme-ready');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

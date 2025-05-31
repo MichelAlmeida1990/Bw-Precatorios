@@ -1,0 +1,203 @@
+/* Temas */
+:root {
+    /* Cores Principais */
+    --primary-color: #0d6efd;
+    --primary-color-dark: #0b5ed7;
+    --primary-color-light: #66b3ff;
+    
+    /* Cores de Sucesso */
+    --success-color: #198754;
+    --success-color-dark: #157347;
+    --success-color-light: #4dd38c;
+    
+    /* Cores de Alerta */
+    --warning-color: #ffc107;
+    --warning-color-dark: #cc9a00;
+    --warning-color-light: #ffd733;
+    
+    /* Cores de Erro */
+    --danger-color: #dc3545;
+    --danger-color-dark: #c82333;
+    --danger-color-light: #ff6b81;
+    
+    /* Cores de Informação */
+    --info-color: #0dcaf0;
+    --info-color-dark: #0aa2c1;
+    --info-color-light: #66e0ff;
+    
+    /* Cores de Fundo */
+    --bg-color: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    
+    /* Cores de Texto */
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --text-light: #495057;
+    
+    /* Cores de Bordas */
+    --border-color: #dee2e6;
+    
+    /* Sombras */
+    --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+.dark-mode {
+    /* Cores Principais */
+    --primary-color: #666;
+    --primary-color-dark: #444;
+    --primary-color-light: #888;
+    
+    /* Cores de Sucesso */
+    --success-color: #198754;
+    --success-color-dark: #157347;
+    --success-color-light: #4dd38c;
+    
+    /* Cores de Alerta */
+    --warning-color: #ffc107;
+    --warning-color-dark: #cc9a00;
+    --warning-color-light: #ffd733;
+    
+    /* Cores de Erro */
+    --danger-color: #dc3545;
+    --danger-color-dark: #c82333;
+    --danger-color-light: #ff6b81;
+    
+    /* Cores de Informação */
+    --info-color: #0dcaf0;
+    --info-color-dark: #0aa2c1;
+    --info-color-light: #66e0ff;
+    
+    /* Cores de Fundo */
+    --bg-color: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #3d3d3d;
+    
+    /* Cores de Texto */
+    --text-color: #ffffff;
+    --text-muted: #999;
+    --text-light: #b3b3b3;
+    
+    /* Cores de Bordas */
+    --border-color: #4d4d4d;
+    
+    /* Sombras */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Dark Mode */
+.dark-mode .navbar {
+    background-color: var(--bg-color) !important;
+    box-shadow: var(--shadow-lg);
+}
+
+.dark-mode .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+.dark-mode .navbar-nav .nav-link {
+    color: var(--text-color) !important;
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Botão de Toggle */
+#theme-toggle {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
+#theme-toggle i {
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+/* Cards Dark Mode */
+.dark-mode .card {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+.dark-mode .card-header {
+    background-color: var(--bg-color);
+    border-bottom-color: var(--border-color);
+}
+
+/* Botões Dark Mode */
+.dark-mode .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+/* Formulários Dark Mode */
+.dark-mode .form-control {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .form-control:focus {
+    background-color: var(--bg-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* Alertas Dark Mode */
+.dark-mode .alert {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Tabelas Dark Mode */
+.dark-mode .table {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.dark-mode .table th {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .table td {
+    border-color: var(--border-color);
+}
+
+/* Footer Dark Mode */
+.dark-mode .footer {
+    background-color: var(--bg-tertiary);
+    border-top-color: var(--border-color);
+}
+
+.dark-mode .footer a {
+    color: var(--text-color);
+}
+
+.dark-mode .footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Transições */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

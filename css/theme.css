@@ -1,0 +1,722 @@
+/* ===== SISTEMA DE TEMAS MODERNO - VERSÃO CORRIGIDA ===== */
+
+/* ===== VARIÁVEIS GLOBAIS - TEMA CLARO ===== */
+:root {
+    /* Cores Principais */
+    --primary-color: #0d6efd;
+    --primary-color-dark: #0b5ed7;
+    --primary-color-light: #66b3ff;
+    
+    /* Cores de Status */
+    --success-color: #198754;
+    --success-color-dark: #157347;
+    --success-color-light: #4dd38c;
+    
+    --warning-color: #ffc107;
+    --warning-color-dark: #cc9a00;
+    --warning-color-light: #ffd733;
+    
+    --danger-color: #dc3545;
+    --danger-color-dark: #c82333;
+    --danger-color-light: #ff6b81;
+    
+    --info-color: #0dcaf0;
+    --info-color-dark: #0aa2c1;
+    --info-color-light: #66e0ff;
+    
+    /* Tema Claro */
+    --bg-color: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --text-light: #495057;
+    --border-color: #dee2e6;
+    --shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== DARK MODE - FORÇADO COM !IMPORTANT ===== */
+.dark-mode {
+    /* Cores Principais - Otimizadas */
+    --primary-color: #4285f4 !important;
+    --primary-color-dark: #3367d6 !important;
+    --primary-color-light: #669df6 !important;
+    
+    /* Cores de Status - Ajustadas */
+    --success-color: #34a853 !important;
+    --success-color-dark: #2e7d32 !important;
+    --success-color-light: #66bb6a !important;
+    
+    --warning-color: #fbbc04 !important;
+    --warning-color-dark: #f9ab00 !important;
+    --warning-color-light: #fdd835 !important;
+    
+    --danger-color: #ea4335 !important;
+    --danger-color-dark: #d93025 !important;
+    --danger-color-light: #ef5350 !important;
+    
+    --info-color: #4285f4 !important;
+    --info-color-dark: #3367d6 !important;
+    --info-color-light: #669df6 !important;
+    
+    /* ✅ CORES DE FUNDO - FORÇADAS */
+    --bg-color: #1a1f26 !important;
+    --bg-secondary: #252b33 !important;
+    --bg-tertiary: #2d343d !important;
+    --bg-quaternary: #374151 !important;
+    
+    /* ✅ CORES DE TEXTO - FORÇADAS */
+    --text-color: #ffffff !important;
+    --text-muted: #9ca3af !important;
+    --text-light: #d1d5db !important;
+    
+    /* ✅ BORDAS E DIVISORES - FORÇADAS */
+    --border-color: #4b5563 !important;
+    --border-light: #6b7280 !important;
+    
+    /* ✅ SOMBRAS OTIMIZADAS */
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.8) !important;
+    --shadow-colored: 0 8px 30px rgba(66, 133, 244, 0.3) !important;
+    
+    /* ✅ GRADIENTES MODERNOS */
+    --gradient-primary: linear-gradient(135deg, #4285f4 0%, #669df6 100%) !important;
+    --gradient-bg: linear-gradient(135deg, #1a1f26 0%, #252b33 50%, #2d343d 100%) !important;
+    --gradient-card: linear-gradient(135deg, #252b33 0%, #2d343d 100%) !important;
+    --gradient-hero: radial-gradient(ellipse at center, rgba(66, 133, 244, 0.15) 0%, transparent 70%) !important;
+}
+
+/* ===== APLICAÇÃO GLOBAL DO TEMA ===== */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.dark-mode body {
+    background: var(--gradient-bg) !important;
+    background-attachment: fixed !important;
+    color: #ffffff !important;
+}
+
+/* ===== NAVBAR - DARK MODE ===== */
+.dark-mode .navbar,
+.dark-mode .navbar-light {
+    background: rgba(26, 31, 38, 0.95) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.dark-mode .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.dark-mode .navbar-nav .nav-link {
+    color: #d1d5db !important;
+    font-weight: 500 !important;
+    position: relative !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark-mode .navbar-nav .nav-link:hover,
+.dark-mode .navbar-nav .nav-link:focus {
+    color: var(--primary-color-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+.dark-mode .navbar-toggler {
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ===== BOTÃO TOGGLE TEMA ===== */
+#theme-toggle {
+    background: rgba(66, 133, 244, 0.1) !important;
+    border: 1px solid rgba(66, 133, 244, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    backdrop-filter: blur(10px) !important;
+    color: var(--primary-color-light) !important;
+}
+
+.dark-mode #theme-toggle:hover {
+    background: rgba(66, 133, 244, 0.2) !important;
+    border-color: var(--primary-color) !important;
+    transform: scale(1.05) !important;
+    box-shadow: var(--shadow-colored) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.dark-mode .hero {
+    background: var(--gradient-bg) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.dark-mode .hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: var(--gradient-hero) !important;
+    pointer-events: none !important;
+}
+
+.dark-mode .hero h1,
+.dark-mode .hero .display-4 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .hero p,
+.dark-mode .hero .lead {
+    color: #d1d5db !important;
+}
+
+/* ===== CARDS - DARK MODE ===== */
+.dark-mode .card {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(20px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+}
+
+.dark-mode .card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.dark-mode .card-header {
+    background: var(--bg-quaternary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    border-radius: 16px 16px 0 0 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .card-body {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .card-title {
+    color: #ffffff !important;
+}
+
+.dark-mode .card-text {
+    color: #d1d5db !important;
+}
+
+/* ===== FEATURE CARDS ===== */
+.dark-mode .feature-card,
+.dark-mode .footer-card {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(20px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 2rem !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .feature-card:hover,
+.dark-mode .footer-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: rgba(66, 133, 244, 0.3) !important;
+}
+
+.dark-mode .feature-card h3,
+.dark-mode .footer-card h3 {
+    color: #ffffff !important;
+}
+
+.dark-mode .feature-card p,
+.dark-mode .footer-card p {
+    color: #d1d5db !important;
+}
+
+.dark-mode .feature-card i,
+.dark-mode .footer-card i {
+    color: var(--primary-color-light) !important;
+}
+
+/* ===== SERVICE CARDS ===== */
+.dark-mode .service-card {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    transition: all 0.4s ease !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .service-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.dark-mode .service-card h3 {
+    color: #ffffff !important;
+}
+
+.dark-mode .service-card p {
+    color: #d1d5db !important;
+}
+
+/* ===== STEP CARDS ===== */
+.dark-mode .step-card {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    transition: all 0.4s ease !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .step-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.dark-mode .step-card .step-number {
+    background: var(--gradient-primary) !important;
+    color: #ffffff !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.dark-mode .step-card h3 {
+    color: #ffffff !important;
+}
+
+.dark-mode .step-card p {
+    color: #d1d5db !important;
+}
+
+/* ===== BOTÕES - DARK MODE ===== */
+.dark-mode .btn-primary {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    padding: 12px 24px !important;
+    box-shadow: var(--shadow-colored) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .btn-primary::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: all 0.5s ease !important;
+}
+
+.dark-mode .btn-primary:hover::before {
+    left: 100% !important;
+}
+
+.dark-mode .btn-primary:hover,
+.dark-mode .btn-primary:focus {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(66, 133, 244, 0.4) !important;
+    background: var(--gradient-primary) !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .btn-outline-secondary {
+    color: #d1d5db !important;
+    border: 1px solid var(--border-color) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark-mode .btn-outline-secondary:hover,
+.dark-mode .btn-outline-secondary:focus {
+    background: rgba(66, 133, 244, 0.1) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ===== FORMULÁRIOS - DARK MODE ===== */
+.dark-mode .form-control {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark-mode .form-control:focus {
+    background: var(--bg-quaternary) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    outline: none !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .form-control::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.8 !important;
+}
+
+.dark-mode .form-label {
+    color: #ffffff !important;
+}
+
+.dark-mode .form-select {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+}
+
+/* ===== SEÇÕES COM BACKGROUND ===== */
+.dark-mode .bg-light {
+    background: var(--bg-secondary) !important;
+}
+
+.dark-mode .py-5 {
+    color: #ffffff !important;
+}
+
+/* ===== TESTIMONIAL CARDS ===== */
+.dark-mode .testimonial-card {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .testimonial-card p {
+    color: #d1d5db !important;
+}
+
+.dark-mode .testimonial-card h4 {
+    color: #ffffff !important;
+}
+
+/* ===== ACCORDION - DARK MODE ===== */
+.dark-mode .accordion-item {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    margin-bottom: 8px !important;
+    overflow: hidden !important;
+}
+
+.dark-mode .accordion-button {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--shadow-colored) !important;
+}
+
+.dark-mode .accordion-body {
+    background: transparent !important;
+    color: #d1d5db !important;
+}
+
+/* ===== TIMELINE - DARK MODE ===== */
+.dark-mode .timeline-line {
+    background: var(--gradient-primary) !important;
+    width: 3px !important;
+    border-radius: 2px !important;
+}
+
+.dark-mode .timeline-item .timeline-content {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(20px) !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .timeline-date {
+    color: var(--primary-color-light) !important;
+    font-weight: 600 !important;
+}
+
+.dark-mode .timeline-title {
+    color: #ffffff !important;
+}
+
+.dark-mode .timeline-description {
+    color: #d1d5db !important;
+}
+
+/* ===== FOOTER - DARK MODE ===== */
+.dark-mode .footer,
+.dark-mode footer,
+.dark-mode .bg-dark {
+    background: var(--bg-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .footer h5,
+.dark-mode footer h5 {
+    color: #ffffff !important;
+}
+
+.dark-mode .footer p,
+.dark-mode footer p {
+    color: #d1d5db !important;
+}
+
+.dark-mode .footer a,
+.dark-mode footer a {
+    color: #d1d5db !important;
+    transition: color 0.3s ease !important;
+}
+
+.dark-mode .footer a:hover,
+.dark-mode footer a:hover {
+    color: var(--primary-color-light) !important;
+    text-decoration: none !important;
+}
+
+.dark-mode .social-icons a {
+    color: #d1d5db !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark-mode .social-icons a:hover {
+    color: var(--primary-color-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ===== BOTTOM NAVIGATION ===== */
+.dark-mode .bottom-nav {
+    background: var(--bg-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.dark-mode .bottom-nav-item {
+    color: #d1d5db !important;
+}
+
+.dark-mode .bottom-nav-item.active,
+.dark-mode .bottom-nav-item:hover {
+    color: var(--primary-color-light) !important;
+}
+
+/* ===== CALCULATOR - DARK MODE ===== */
+.dark-mode .calculator-container {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .calculator-header h2 {
+    color: #ffffff !important;
+}
+
+.dark-mode .calculator-header p {
+    color: #d1d5db !important;
+}
+
+.dark-mode .calculator-input,
+.dark-mode .calculator-select {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .calculate-button {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+/* ===== FAQ - DARK MODE ===== */
+.dark-mode .faq-container {
+    color: #ffffff !important;
+}
+
+.dark-mode .faq-header h2 {
+    color: #ffffff !important;
+}
+
+.dark-mode .faq-header p {
+    color: #d1d5db !important;
+}
+
+/* ===== SCROLLBAR - DARK MODE ===== */
+.dark-mode::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+    background: var(--bg-color) !important;
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary) !important;
+    border-radius: 4px !important;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-light) !important;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dark-mode .card,
+.dark-mode .feature-card,
+.dark-mode .service-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .dark-mode .card:hover {
+        transform: translateY(-4px) scale(1.01) !important;
+    }
+    
+    .dark-mode .btn-primary {
+        padding: 10px 20px !important;
+    }
+}
+
+/* ===== UTILITÁRIOS - FORÇADOS ===== */
+.dark-mode .text-primary {
+    color: var(--primary-color-light) !important;
+}
+
+.dark-mode .bg-primary {
+    background: var(--gradient-primary) !important;
+}
+
+.dark-mode .border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.dark-mode .text-dark {
+    color: #ffffff !important;
+}
+
+.dark-mode .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* ===== HEADERS E TÍTULOS ===== */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #ffffff !important;
+}
+
+.dark-mode p {
+    color: #d1d5db !important;
+}
+
+.dark-mode .lead {
+    color: #d1d5db !important;
+}
+
+/* ===== LISTAS ===== */
+.dark-mode ul li {
+    color: #d1d5db !important;
+}
+
+.dark-mode .list-unstyled li {
+    color: #d1d5db !important;
+}
+
+/* ===== ÍCONES ===== */
+.dark-mode .fas,
+.dark-mode .fab,
+.dark-mode .far {
+    color: var(--primary-color-light) !important;
+}
+
+/* ===== LINKS ===== */
+.dark-mode a {
+    color: var(--primary-color-light) !important;
+    transition: color 0.3s ease !important;
+}
+
+.dark-mode a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ===== FORÇA APLICAÇÃO TOTAL ===== */
+.dark-mode * {
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode *:not(.btn):not(.badge):not(.alert) {
+    background-color: inherit !important;
+}

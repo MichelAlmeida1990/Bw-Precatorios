@@ -1,0 +1,129 @@
+/* Otimização de Mídia */
+
+/* Otimização de Imagens */
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-img.loaded {
+    opacity: 1;
+}
+
+/* Otimização de Fontes */
+@font-face {
+    font-family: 'OptimizedFont';
+    src: local('OptimizedFont'),
+         url('fonts/optimized-font.woff2') format('woff2'),
+         url('fonts/optimized-font.woff') format('woff');
+    font-display: swap;
+}
+
+/* Otimização de SVG */
+svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: currentColor;
+}
+
+/* Otimização de Vídeos */
+video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Otimização de Backgrounds */
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Otimização de Carregamento */
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Otimização de Lazy Loading */
+.lazy-element {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-element.loaded {
+    opacity: 1;
+}
+
+/* Otimização de Performance */
+.will-change {
+    will-change: transform, opacity;
+}
+
+.transform-3d {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimização de Animações */
+.animate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimização de Transformações */
+.transform {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Otimização de Transições */
+.transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Otimização de Sombras */
+.box-shadow {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Otimização de Bordas */
+.border-radius {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Otimização de Imagens Responsivas */
+@media screen and (max-width: 768px) {
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Otimização de Lazy Loading em Mobile */
+@media screen and (max-width: 768px) {
+    .lazy-mobile {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .lazy-mobile.loaded {
+        opacity: 1;
+    }
+}
