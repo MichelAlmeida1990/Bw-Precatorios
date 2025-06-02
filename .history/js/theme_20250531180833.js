@@ -1,26 +1,10 @@
-/**
- * Gerenciador de Temas Aprimorado
- * Versão: 2.0
- * Recursos:
- * - Transições suaves entre temas
- * - Persistência de preferências
- * - Detecção de preferência do sistema
- * - Animações personalizadas
- * - Suporte para acessibilidade
- */
-
+// Theme Manager
 class ThemeManager {
     constructor() {
         this.themeToggle = document.getElementById('theme-toggle');
         this.themeKey = 'bw_precatorios_theme';
         this.defaultTheme = 'light';
-        this.transitionDuration = 800; // Aumentado para transição mais suave
-        
-        // Elementos para animação
-        this.animatedElements = [
-            '.card', '.feature-card', '.service-card', '.step-card',
-            '.testimonial-card', '.calculator-container', '.faq-container'
-        ];
+        this.transitionDuration = 600; // Duração da transição em ms
         
         // Inicialização segura
         try {
@@ -48,12 +32,6 @@ class ThemeManager {
         
         // Adicionar classes para efeitos de transição
         this.setupTransitionEffects();
-        
-        // Adicionar suporte para atalho de teclado
-        this.setupKeyboardShortcut();
-        
-        // Adicionar atributos de acessibilidade
-        this.setupAccessibility();
     }
 
     setupTransitionEffects() {
@@ -63,7 +41,6 @@ class ThemeManager {
         // Criar e adicionar um elemento de overlay para transição
         const overlay = document.createElement('div');
         overlay.className = 'theme-transition-overlay';
-        overlay.setAttribute('aria-hidden', 'true');
         overlay.style.cssText = `
             position: fixed;
             top: 0;
@@ -73,7 +50,7 @@ class ThemeManager {
             background-color: rgba(0, 0, 0, 0);
             pointer-events: none;
             z-index: 9999;
-            transition: opacity ${this.transitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity ${this.transitionDuration}ms ease;
             opacity: 0;
         `;
         document.body.appendChild(overlay);
@@ -112,25 +89,6 @@ class ThemeManager {
             mediaQuery.addListener(handleSystemThemeChange); // Para navegadores mais antigos
         }
     }
-    
-    setupKeyboardShortcut() {
-        // Adicionar atalho de teclado (Shift + D) para alternar tema
-        document.addEventListener('keydown', (e) => {
-            if (e.shiftKey && e.key === 'D') {
-                this.toggleTheme();
-            }
-        });
-    }
-    
-    setupAccessibility() {
-        // Adicionar atributos ARIA para acessibilidade
-        if (this.themeToggle) {
-            this.themeToggle.setAttribute('role', 'switch');
-            this.themeToggle.setAttribute('aria-checked', 
-                document.documentElement.classList.contains('dark-mode') ? 'true' : 'false');
-            this.themeToggle.setAttribute('aria-label', 'Alternar para tema escuro');
-        }
-    }
 
     setTheme(theme, fromSystem = false) {
         try {
@@ -156,13 +114,6 @@ class ThemeManager {
                 // Atualizar ícone
                 this.updateThemeIcon(theme);
                 
-                // Atualizar atributos ARIA
-                if (this.themeToggle) {
-                    this.themeToggle.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
-                    this.themeToggle.setAttribute('aria-label', 
-                        `Alternar para tema ${theme === 'dark' ? 'claro' : 'escuro'}`);
-                }
-                
                 // Salvar preferência (a menos que venha do sistema e já exista uma preferência)
                 if (!fromSystem || !localStorage.getItem(this.themeKey)) {
                     localStorage.setItem(this.themeKey, theme);
@@ -170,9 +121,6 @@ class ThemeManager {
                 
                 // Disparar evento personalizado
                 this.dispatchThemeChange(theme);
-                
-                // Animar elementos específicos
-                this.animateElements(theme);
                 
                 // Completar transição após um tempo
                 setTimeout(() => {
@@ -183,24 +131,6 @@ class ThemeManager {
         } catch (error) {
             console.error('Erro ao definir o tema:', error);
         }
-    }
-    
-    animateElements(theme) {
-        // Adicionar animações a elementos específicos
-        const elements = document.querySelectorAll(this.animatedElements.join(','));
-        
-        elements.forEach((el, index) => {
-            // Remover classes de animação existentes
-            el.classList.remove('theme-fade-in');
-            
-            // Forçar repaint
-            void el.offsetWidth;
-            
-            // Adicionar animação com delay baseado no índice
-            setTimeout(() => {
-                el.classList.add('theme-fade-in');
-            }, 50 * index);
-        });
     }
     
     startTransition(newTheme) {
@@ -232,7 +162,7 @@ class ThemeManager {
         // Adicionar classe de transição suave
         icon.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         icon.style.opacity = '0';
-        icon.style.transform = 'rotate(180deg) scale(0.8)';
+        icon.style.transform = 'rotate(180deg)';
         
         // Aguardar a transição de fade out
         setTimeout(() => {
@@ -244,7 +174,7 @@ class ThemeManager {
             
             // Fade in com rotação
             icon.style.opacity = '1';
-            icon.style.transform = 'rotate(0) scale(1)';
+            icon.style.transform = 'rotate(0)';
             
             // Remover estilo após a transição
             setTimeout(() => {
@@ -278,46 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         try {
             window.themeManager = new ThemeManager();
-            
-            // Adicionar notificação de atalho de teclado
-            const notification = document.createElement('div');
-            notification.className = 'theme-shortcut-notification';
-            notification.innerHTML = 'Dica: Use <kbd>Shift</kbd> + <kbd>D</kbd> para alternar o tema';
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: var(--primary-color);
-                color: white;
-                padding: 10px 15px;
-                border-radius: 8px;
-                font-size: 14px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                z-index: 1000;
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 0.3s ease;
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Mostrar notificação após 3 segundos
-            setTimeout(() => {
-                notification.style.opacity = '1';
-                notification.style.transform = 'translateY(0)';
-                
-                // Esconder após 5 segundos
-                setTimeout(() => {
-                    notification.style.opacity = '0';
-                    notification.style.transform = 'translateY(20px)';
-                    
-                    // Remover do DOM após a animação
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 300);
-                }, 5000);
-            }, 3000);
-            
         } catch (error) {
             console.error('Falha ao inicializar o gerenciador de temas:', error);
         }
@@ -338,35 +228,6 @@ const addTransitionStyles = () => {
         
         .theme-transition-overlay {
             pointer-events: none;
-        }
-        
-        .theme-fade-in {
-            animation: themeFadeIn 0.5s forwards;
-        }
-        
-        @keyframes themeFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        kbd {
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 3px;
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-            color: #fff;
-            display: inline-block;
-            font-size: 0.85em;
-            font-weight: 700;
-            line-height: 1;
-            padding: 2px 4px;
-            white-space: nowrap;
         }
     `;
     document.head.appendChild(style);

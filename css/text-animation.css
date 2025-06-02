@@ -1,0 +1,56 @@
+﻿/* Estilos para a animação de texto */
+.animated-text {
+    display: inline-block;
+    position: relative;
+}
+
+.animated-text-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-text span {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animated-text span.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-text span.highlight {
+    color: var(--bs-primary);
+    font-weight: bold;
+}
+
+/* Compatibilidade com tema escuro */
+.dark-theme .animated-text span.highlight {
+    color: #5e9eff;
+    text-shadow: 0 0 5px rgba(94, 158, 255, 0.3);
+}
+
+/* Efeito de cursor piscando */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--bs-primary);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 0.9em;
+    }
+}
