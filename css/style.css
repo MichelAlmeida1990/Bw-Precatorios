@@ -53,10 +53,31 @@ body {
 /* Navbar */
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
 }
 
-.navbar-brand img {
-    height: 50px;
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo específico para o logo */
+.navbar > .container > .navbar-brand > img {
+    height: 80px !important; /* Aumentado para 80px */
+    width: auto !important;
+    max-width: 250px !important;
+    object-fit: contain !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Ajuste do logo em telas menores */
+@media (max-width: 991.98px) {
+    .navbar > .container > .navbar-brand > img {
+        height: 60px !important; /* Ajustado para 60px em telas menores */
+        max-width: 200px !important;
+    }
 }
 
 /* Feature Cards */

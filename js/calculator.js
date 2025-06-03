@@ -60,16 +60,40 @@ class PrecatorioCalculator {
     setupInputMasks() {
         // Formatação de moeda para o input de valor
         if (this.valorInput) {
+            this.valorInput.type = 'text';
+            this.valorInput.placeholder = '0,00';
+            
             this.valorInput.addEventListener('input', (e) => {
+                // Remove tudo que não for número
                 let value = e.target.value.replace(/\D/g, '');
-                if (value) {
-                    value = (parseInt(value) / 100).toLocaleString('pt-BR', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    });
-                    e.target.value = `R$ ${value}`;
-                } else {
+                
+                // Se não tiver valor, limpa o campo
+                if (!value) {
                     e.target.value = '';
+                    return;
+                }
+                
+                // Converte para número e formata como moeda
+                value = (parseInt(value) / 100).toLocaleString('pt-BR', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+                
+                // Atualiza o valor formatado
+                e.target.value = value;
+            });
+            
+            // Adiciona o R$ quando o campo perde o foco
+            this.valorInput.addEventListener('blur', (e) => {
+                if (e.target.value) {
+                    e.target.value = 'R$ ' + e.target.value;
+                }
+            });
+            
+            // Remove o R$ quando o campo recebe foco para facilitar a edição
+            this.valorInput.addEventListener('focus', (e) => {
+                if (e.target.value.startsWith('R$ ')) {
+                    e.target.value = e.target.value.replace('R$ ', '').trim();
                 }
             });
         }
@@ -206,6 +230,17 @@ class PrecatorioCalculator {
         this.resultContainer.style.display = 'block';
     }
 
+    getNumericValue(formattedValue) {
+        if (!formattedValue) return 0;
+        
+        // Remove o R$ e espaços, substitui vírgula por ponto e converte para número
+        const numericString = formattedValue
+            .replace(/[^\d,]/g, '') // Remove tudo que não for número ou vírgula
+            .replace(',', '.');      // Substitui vírgula por ponto
+            
+        return parseFloat(numericString) || 0;
+    }
+    
     calculate() {
         if (!this.calculateButton) return;
         
