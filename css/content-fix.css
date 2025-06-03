@@ -1,0 +1,30 @@
+/* Correção para evitar sobreposição do conteúdo com a navbar fixa */
+body {
+  /* Adiciona padding no topo para compensar a altura da navbar fixa */
+  padding-top: 80px !important;
+}
+
+/* Garantir que a navbar tenha uma altura definida */
+.navbar {
+  height: auto;
+  min-height: 70px;
+}
+
+/* Ajuste para o conteúdo principal */
+main, .container-fluid, section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Garantir que a navbar tenha um z-index apropriado */
+.navbar {
+  z-index: 1030;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 70px !important;
+  }
+}

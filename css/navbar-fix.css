@@ -1,0 +1,29 @@
+/* Correção forçada para o menu à direita */
+#navbarNav {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+
+#navbarNav .navbar-nav {
+  margin-left: auto !important;
+  width: auto !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.navbar .container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Garantir que o botão de toggle não afete o alinhamento */
+.navbar-toggler {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+/* Ajuste para o botão de tema */
+#theme-toggle {
+  margin-left: 10px;
+}

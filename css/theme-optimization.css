@@ -1,0 +1,27 @@
+/* Otimização das transições de tema */
+:root {
+  /* Reduzir a duração das transições */
+  --theme-transition-duration: 0.2s;
+}
+
+/* Limitar transições apenas às propriedades necessárias */
+body, .navbar, .card, .btn, .form-control, .footer {
+  transition: background-color var(--theme-transition-duration) ease-out,
+              color var(--theme-transition-duration) ease-out,
+              border-color var(--theme-transition-duration) ease-out !important;
+}
+
+/* Evitar transições em elementos que não precisam delas */
+img, svg, video, canvas, iframe {
+  transition: none !important;
+}
+
+/* Melhorar performance usando will-change para elementos críticos */
+.navbar, body {
+  will-change: background-color, color;
+}
+
+/* Desativar animações durante o carregamento inicial da página */
+.preload * {
+  transition: none !important;
+}
